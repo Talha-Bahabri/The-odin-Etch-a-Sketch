@@ -1,4 +1,28 @@
-.p {
+.hehe {
     font-weight: bolder;
     color: red;
+}
+
+.black {
+    background-color: gray;
+}
+
+.container { 
+    display: flex;
+    background-color: gray;
+}
+
+.tool-div {
+    background-color: green;
+    padding: 20px;
+    height: 800px;
+    margin: 20px;
+}
+
+.sketch-div {
+    background-color: rgb(99, 24, 105);
+    width: 2500px;
+    /* padding-bottom: 100px;
+    padding-right: 100px; */
+    margin: 20px;
 }

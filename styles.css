@@ -23,19 +23,23 @@
 }
 
 .sketch-div {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, auto); 
+    /* grid-template-columns: auto auto auto auto ; */
+    
+    /* grid-template-columns: auto auto; */
+    /* flex-wrap: wrap; */
     background-color: rgb(99, 24, 105);
     width: 2500px; 
-    height: auto;
+    height: 545px;
     margin: 20px;
 }
 
 .block {
-    height: 50px;
+    /* height: 50px;
     width: 50px;
     max-width: 50px;
-    max-height: 50px;
+    max-height: 50px; */
     border-style: dashed;
 
 }

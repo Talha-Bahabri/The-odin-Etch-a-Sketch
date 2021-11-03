@@ -3,11 +3,13 @@ function createDivs () {
 
     userInputSize = prompt ("how many .. only numbers");
 
+    sketchDivSelector.style.gridTemplateColumns = `repeat(${userInputSize}, auto)`;
+
 
     for (i=1 ; i <= userInputSize*userInputSize ; i++) {
         let div1 = document.createElement("div");
         let par1 = document.createElement("p");
-        par1.textContent = "yepo";
+        par1.textContent = "test";
         div1.style.cssText = "background-color: pink";  
         div1.classList.add('block'); 
         div1.append(par1);

@@ -25,8 +25,6 @@
 .sketch-div {
     display: grid;
     grid-template-columns: repeat(4, auto); 
-
-    /* grid-template-columns: subgrid;  */
     
 
     background-color: rgb(99, 24, 105);
@@ -36,11 +34,18 @@
 }
 
 .block {
-
-  
     height: auto;
     width: auto;
-    /* border-style: dashed;  */
 
+}
+
+.clrButton{
+    font-size: 20px;
+    font-weight: bolder;
+    font-family:  Arial, Helvetica, sans-serif;
+    background-color: rgb(211, 211, 211);
+    margin-left: 25%;
+    padding: 20px;
+    border-radius: 9999px;
 }
 

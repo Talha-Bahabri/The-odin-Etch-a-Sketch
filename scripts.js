@@ -13,6 +13,7 @@ function createDivs () {
 
         div1.classList.add('block'); 
         sketchDivSelector.appendChild(div1);
+        hoverChangeColor(div1)
 
     }
     
@@ -29,18 +30,18 @@ function getRandomColor() {
   }
 
 
-  function hoverChangeColor() {
-    let smallBoxes = document.querySelector(`.block`)
-    smallBoxes.addEventListener( "mouseenter", () => {
-         smallBoxes.style.cssText = `background-color: black`;
+  function hoverChangeColor(div1) {
+    div1.addEventListener( "mouseenter", () => {
+        div1.style.cssText = `background-color: black`;
       });
 
   }
 
   
 console.log("this is before create");
+
 createDivs();
-hoverChangeColor()
+
 console.log("this is after create");
 
 

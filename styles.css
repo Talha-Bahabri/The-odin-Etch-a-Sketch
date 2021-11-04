@@ -36,11 +36,11 @@
 }
 
 .block {
-    
+
   
-    /* height: 20px;
-    width: 20px;
-    border-style: dashed; */
+    height: auto;
+    width: auto;
+    /* border-style: dashed;  */
 
 }
 

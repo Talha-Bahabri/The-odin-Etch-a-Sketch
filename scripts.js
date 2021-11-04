@@ -7,6 +7,10 @@ function createDivs () {
     sketchDivSelector.style.gridTemplateRows = `repeat(${userInputSize}, auto)`;
 
 
+    
+    
+
+
     for (i=1 ; i <= userInputSize*userInputSize ; i++) {
         let div1 = document.createElement("div");
         // let par1 = document.createElement("p");

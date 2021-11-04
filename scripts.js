@@ -4,15 +4,18 @@ function createDivs () {
     userInputSize = prompt ("how many .. only numbers");
 
     sketchDivSelector.style.gridTemplateColumns = `repeat(${userInputSize}, auto)`;
+    sketchDivSelector.style.gridTemplateRows = `repeat(${userInputSize}, auto)`;
 
 
     for (i=1 ; i <= userInputSize*userInputSize ; i++) {
         let div1 = document.createElement("div");
-        let par1 = document.createElement("p");
-        par1.textContent = "test";
-        div1.style.cssText = "background-color: pink";  
+        // let par1 = document.createElement("p");
+        // par1.textContent = "";
+        
+
+        div1.style.cssText = `background-color: ${getRandomColor()}`; 
         div1.classList.add('block'); 
-        div1.append(par1);
+        //div1.append(par1);
         sketchDivSelector.appendChild(div1);
 
     }
@@ -20,6 +23,17 @@ function createDivs () {
     
 
 }
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+
 console.log("this is before create");
 createDivs();
 

@@ -1,20 +1,32 @@
-function createDivs () {
+    
+    userInputSize = 16;
     const sketchDivSelector = document.querySelector(".sketch-div");
 
-    userInputSize = prompt ("how many .. only numbers");
+function createDivs () {
+
+    if (userInputSize == 16 ) {
+        console.log(`the userinput is 16`)
+    }
+    else {
+        userInputSize = prompt ("how many .. only numbers");
+    }
 
     sketchDivSelector.style.gridTemplateColumns = `repeat(${userInputSize}, auto)`;
     sketchDivSelector.style.gridTemplateRows = `repeat(${userInputSize}, auto)`;
 
+    
+
     for (i=1 ; i <= userInputSize*userInputSize ; i++) {
-        let div1 = document.createElement("div");
+        div1 = document.createElement("div");
         
         div1.style.cssText = `background-color: ${getRandomColor()}`; 
 
         div1.classList.add('block'); 
-        sketchDivSelector.appendChild(div1);
-        hoverChangeColor(div1)
-        clrButton(div1)
+        sketchDivSelector.append(div1);
+
+        
+        hoverChangeColor(div1);
+        clrButton(div1);
 
     }
     
@@ -48,11 +60,30 @@ function getRandomColor() {
   }
 
 
+  function reSizeButton() {
+      const reSizeButton = document.querySelector(`.reSize`);
+
+        reSizeButton.addEventListener("click" , () => {
+        
+        for (i=1 ; i <= userInputSize*userInputSize ; i++) {
+            divRemove = document.querySelector(`.block`);
+            sketchDivSelector.removeChild(divRemove);
+
+        }
+        
+        userInputSize = 0 ;
+        createDivs();
+      });
+
+
+  }
+
+
   
 console.log("this is before create");
-
 createDivs();
 
+reSizeButton()
 console.log("this is after create");
 
 

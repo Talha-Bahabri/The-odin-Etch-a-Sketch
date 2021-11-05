@@ -3,18 +3,8 @@
     const sketchDivSelector = document.querySelector(".sketch-div");
 
 function createDivs () {
-
-    if (userInputSize == 16 ) {
-        console.log(`the userinput is 16`)
-    }
-    else {
-        userInputSize = prompt ("how many .. only numbers");
-    }
-
     sketchDivSelector.style.gridTemplateColumns = `repeat(${userInputSize}, auto)`;
     sketchDivSelector.style.gridTemplateRows = `repeat(${userInputSize}, auto)`;
-
-    
 
     for (i=1 ; i <= userInputSize*userInputSize ; i++) {
         div1 = document.createElement("div");
@@ -70,21 +60,26 @@ function getRandomColor() {
             sketchDivSelector.removeChild(divRemove);
 
         }
-        
+
         userInputSize = 0 ;
+
+        while(true) {
+            userInputSize = prompt (`Enter a number which is not above 100`);
+            if (userInputSize > 100) {
+                continue;
+            }
+            else{
+                break;
+            }
+        }
+
         createDivs();
       });
-
-
   }
 
-
   
-console.log("this is before create");
 createDivs();
-
 reSizeButton()
-console.log("this is after create");
 
 
 

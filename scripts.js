@@ -14,6 +14,7 @@ function createDivs () {
         div1.classList.add('block'); 
         sketchDivSelector.appendChild(div1);
         hoverChangeColor(div1)
+        clrButton(div1)
 
     }
     
@@ -36,6 +37,16 @@ function getRandomColor() {
       });
 
   }
+
+  function clrButton(div1) {
+      const clrButton = document.querySelector(`.clrButton`);
+
+      clrButton.addEventListener("click" ,  () => {
+        div1.style.cssText = `background-color: gray`;
+      });
+
+  }
+
 
   
 console.log("this is before create");

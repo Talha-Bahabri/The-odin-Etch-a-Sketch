@@ -2,6 +2,9 @@
     userInputSize = 16;
     const sketchDivSelector = document.querySelector(".sketch-div");
 
+    cursorColor = `black`;
+    
+
 function createDivs () {
     sketchDivSelector.style.gridTemplateColumns = `repeat(${userInputSize}, auto)`;
     sketchDivSelector.style.gridTemplateRows = `repeat(${userInputSize}, auto)`;
@@ -9,7 +12,7 @@ function createDivs () {
     for (i=1 ; i <= userInputSize*userInputSize ; i++) {
         div1 = document.createElement("div");
         
-        div1.style.cssText = `background-color: ${getRandomColor()}`; 
+        div1.style.cssText = `background-color: white`; 
 
         div1.classList.add('block'); 
         sketchDivSelector.append(div1);
@@ -35,7 +38,7 @@ function getRandomColor() {
 
   function hoverChangeColor(div1) {
     div1.addEventListener( "mouseenter", () => {
-        div1.style.cssText = `background-color: black`;
+        div1.style.cssText = `background-color: ${cursorColor}`;
       });
 
   }
@@ -44,7 +47,7 @@ function getRandomColor() {
       const clrButton = document.querySelector(`.clrButton`);
 
       clrButton.addEventListener("click" ,  () => {
-        div1.style.cssText = `background-color: gray`;
+        div1.style.cssText = `background-color: white`;
       });
 
   }
@@ -77,10 +80,18 @@ function getRandomColor() {
       });
   }
 
+
+
+    function randomColorsButton() {
+        const randomColorsButton = document.querySelector(`.randomColors`);
+        randomColorsButton.addEventListener("click" , () => {
+            cursorColor = `${getRandomColor()}`;
+          });
+    }
   
 createDivs();
 reSizeButton()
-
+randomColorsButton()
 
 
 

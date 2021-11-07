@@ -1,8 +1,7 @@
     
-    userInputSize = 16;
+    let userInputSize = 16;
     const sketchDivSelector = document.querySelector(".sketch-div");
-
-    cursorColor = `black`;
+    let cursorColor = `black`;
 
 
 function createDivs () {
@@ -10,15 +9,15 @@ function createDivs () {
     sketchDivSelector.style.gridTemplateRows = `repeat(${userInputSize}, auto)`;
  
     for (i=1 ; i <= userInputSize*userInputSize ; i++) {
+
+        // div1 stands for the indivisual boxes inside the sketch div.
         div1 = document.createElement("div");
-        
-        
         div1.style.cssText = `background-color: white`; 
 
         div1.classList.add('block'); 
         sketchDivSelector.append(div1);
 
-        
+        //Added the hover function and clr button here so it can affect every div block
         hoverChangeColor(div1);
         clrButton(div1);
 
@@ -26,21 +25,8 @@ function createDivs () {
     
 }
 
-
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
-
-
   function hoverChangeColor(div1) {
     div1.addEventListener( "mouseenter", () => {
-        // div1.style.cssText = `background-color: ${cursorColor}`;
-
         if (cursorColor == `black`) {
             div1.style.cssText = `background-color: black`; 
 
@@ -92,7 +78,14 @@ function getRandomColor() {
       });
   }
 
-
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
     function randomColorsButton() {
         const randomColorsButton = document.querySelector(`.randomColors`);
@@ -113,9 +106,9 @@ function getRandomColor() {
 
     }
   
+
 createDivs();
 reSizeButton();
-
 randomColorsButton();
 
 
